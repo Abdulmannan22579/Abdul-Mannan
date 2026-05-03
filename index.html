@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Mannan | Finance & Data Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --navy: #1B3A6B; --gold: #C9A84C; --cream: #F7F4EF; --dark: #1A1A1A; --mid: #555; --light: #999; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 40px 24px; }
+  .hero::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.15); top: -100px; right: -100px; animation: spin 30s linear infinite; }
+  .hero::after { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); bottom: -80px; left: -80px; animation: spin 20s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hero-inner { text-align: center; z-index: 1; opacity: 0; transform: translateY(30px); animation: fadeUp 0.9s ease forwards 0.2s; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .hero-tag { display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 6px 18px; border-radius: 2px; margin-bottom: 28px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 8vw, 80px); color: #fff; line-height: 1.05; margin-bottom: 20px; }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 460px; margin: 0 auto 40px; line-height: 1.8; font-weight: 300; }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--navy); padding: 13px 32px; font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: 0.5px; border-radius: 2px; transition: all 0.25s; }
+  .btn-primary:hover { background: #e0bc60; transform: translateY(-2px); }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 13px 32px; font-size: 13px; font-weight: 400; text-decoration: none; letter-spacing: 0.5px; border-radius: 2px; transition: all 0.25s; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .stats { background: #fff; border-bottom: 1px solid #e8e3da; padding: 32px 24px; }
+  .stats-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--navy); display: block; }
+  .stat-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--light); margin-top: 4px; }
+
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); color: var(--navy); margin-bottom: 48px; }
+
+  .exp-list { display: flex; flex-direction: column; gap: 2px; }
+  .exp-card { background: #fff; padding: 28px 32px; border-left: 3px solid transparent; transition: border-color 0.2s, box-shadow 0.2s; }
+  .exp-card:hover { border-left-color: var(--gold); box-shadow: 4px 0 20px rgba(0,0,0,0.06); }
+  .exp-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+  .exp-role { font-size: 16px; font-weight: 500; color: var(--dark); }
+  .exp-company { font-size: 13px; color: var(--navy); font-weight: 500; margin-top: 4px; }
+  .exp-date { font-size: 12px; color: var(--light); letter-spacing: 0.5px; white-space: nowrap; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .skill-card { background: #fff; padding: 22px; border-top: 3px solid var(--navy); transition: border-color 0.2s; }
+  .skill-card:hover { border-top-color: var(--gold); }
+  .skill-cat { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--light); margin-bottom: 10px; }
+  .skill-items { font-size: 13px; color: var(--mid); line-height: 1.9; }
+
+  .contact-section { background: var(--navy); }
+  .contact-section .section-title { color: #fff; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .contact-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: 2px; text-decoration: none; transition: background 0.2s, border-color 0.2s; display: block; }
+  .contact-card:hover { background: rgba(201,168,76,0.12); border-color: var(--gold); }
+  .contact-icon { font-size: 20px; margin-bottom: 10px; }
+  .contact-type { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+  .contact-val { font-size: 13px; color: #fff; word-break: break-all; }
+
+  footer { text-align: center; padding: 24px; background: #111; font-size: 12px; color: #555; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Finance · Data · AI</span>
+    <h1>Abdul <span>Mannan</span></h1>
+    <p class="hero-sub">Finance & Investment Professional based in Karachi, Pakistan. Bridging financial analysis with data intelligence.</p>
+    <div class="hero-btns">
+      <a href="mailto:abdulmannan22579@gmail.com" class="btn-primary">Get in Touch</a>
+      <a href="https://linkedin.com/in/abdul-mannan-2aa177244" target="_blank" class="btn-outline">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Years Experience</span></div>
+    <div class="stat"><span class="stat-num">5</span><span class="stat-label">Companies</span></div>
+    <div class="stat"><span class="stat-num">40%</span><span class="stat-label">Reporting Time Saved</span></div>
+    <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Certifications</span></div>
+  </div>
+</div>
+
+<section style="background:#f9f6f1;">
+  <div class="section-inner">
+    <p class="section-label reveal">Career</p>
+    <h2 class="section-title reveal">Professional Experience</h2>
+    <div class="exp-list">
+      <div class="exp-card reveal"><div class="exp-top"><div><div class="exp-role">Assistant Manager – Operations & Data Analytics</div><div class="exp-company">MCB Funds</div></div><span class="exp-date">Dec 2025 – Present</span></div></div>
+      <div class="exp-card reveal"><div class="exp-top"><div><div class="exp-role">Finance Executive</div><div class="exp-company">Wali Enterprises (Wali Films)</div></div><span class="exp-date">Jan 2025 – Nov 2025</span></div></div>
+      <div class="exp-card reveal"><div class="exp-top"><div><div class="exp-role">Intern – Trade Compliance</div><div class="exp-company">Meezan Bank</div></div><span class="exp-date">Oct 2024 – Dec 2024</span></div></div>
+      <div class="exp-card reveal"><div class="exp-top"><div><div class="exp-role">Junior Finance Officer</div><div class="exp-company">Xarlon</div></div><span class="exp-date">Jan 2023 – Sep 2024</span></div></div>
+      <div class="exp-card reveal"><div class="exp-top"><div><div class="exp-role">Finance Intern</div><div class="exp-company">SnapGrow (Pvt) Ltd</div></div><span class="exp-date">Oct 2022 – Dec 2022</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="section-label reveal">Expertise</p>
+    <h2 class="section-title reveal">Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-cat">Finance</div><div class="skill-items">Financial Analysis<br>Budgeting & Forecasting<br>Variance Analysis<br>Financial Modeling</div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Data & Analytics</div><div class="skill-items">Power BI<br>Tableau<br>Advanced Excel<br>MIS Reporting</div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Compliance</div><div class="skill-items">AML / TBML<br>Regulatory Reporting<br>Risk Mitigation</div></div>
+      <div class="skill-card reveal"><div class="skill-cat">Tools</div><div class="skill-items">QuickBooks<br>Xero<br>SAP FICO (Enrolled)<br>n8n Automation</div></div>
+      <div class="skill-card reveal"><div class="skill-cat">AI & Tech</div><div class="skill-items">RAG Systems<br>LangChain<br>Agentic AI<br>FastAPI</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="section-inner">
+    <p class="section-label reveal">Let's Connect</p>
+    <h2 class="section-title reveal">Get in Touch</h2>
+    <div class="contact-grid">
+      <a href="mailto:abdulmannan22579@gmail.com" class="contact-card reveal"><div class="contact-icon">✉</div><div class="contact-type">Email</div><div class="contact-val">abdulmannan22579@gmail.com</div></a>
+      <a href="tel:+923450201888" class="contact-card reveal"><div class="contact-icon">☎</div><div class="contact-type">Phone</div><div class="contact-val">+92 345 0201888</div></a>
+      <a href="https://linkedin.com/in/abdul-mannan-2aa177244" target="_blank" class="contact-card reveal"><div class="contact-icon">in</div><div class="contact-type">LinkedIn</div><div class="contact-val">linkedin.com/in/abdul-mannan-2aa177244</div></a>
+      <div class="contact-card reveal" style="cursor:default;"><div class="contact-icon">📍</div><div class="contact-type">Location</div><div class="contact-val">Karachi, Pakistan</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Abdul Mannan · Karachi, Pakistan</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
